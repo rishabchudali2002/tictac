@@ -1,0 +1,125 @@
+<!-- create a simple tiktak toe type of game using javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .row{
+        display: flex;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+    .box:hover{
+        background-color: aquamarine;
+    }
+    .box:active{
+        background-color: blueviolet;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="box" onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+    </div>
+    <div class="row">
+        <div class="box"onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+    </div>
+    <div class="row">
+        <div class="box"onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+        <div class="box"onclick="addelement()"></div>
+    </div>
+    </div>
+    <script>
+        var box= document.querySelectorAll('.box');
+        rightImage= '<img src="right.png" alt="right" height="90px" width="90px">';
+        wrongImage= '<img src="wrong.png" alt="wrong" height="90px" width="90px">';
+      
+        currentImage= rightImage;
+        function addelement(){
+            event.target.innerHTML = currentImage;
+           
+            currentImage= currentImage== rightImage ? wrongImage : rightImage;
+            checkGameorNot();
+        }
+        function checkGameorNot(){
+            if(box[0].innerHTML==rightImage && box[1].innerHTML==rightImage && box[2].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[3].innerHTML==rightImage && box[4].innerHTML==rightImage && box[5].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[6].innerHTML==rightImage && box[7].innerHTML==rightImage && box[8].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[0].innerHTML==rightImage && box[3].innerHTML==rightImage && box[6].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[1].innerHTML==rightImage && box[4].innerHTML==rightImage && box[7].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[2].innerHTML==rightImage && box[5].innerHTML==rightImage && box[8].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[0].innerHTML==rightImage && box[4].innerHTML==rightImage && box[8].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[2].innerHTML==rightImage && box[4].innerHTML==rightImage && box[6].innerHTML==rightImage){
+                alert('Right Player Wins');
+            }
+            else if(box[0].innerHTML==wrongImage && box[1].innerHTML==wrongImage && box[2].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[3].innerHTML==wrongImage && box[4].innerHTML==wrongImage && box[5].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[6].innerHTML==wrongImage && box[7].innerHTML==wrongImage && box[8].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[0].innerHTML==wrongImage && box[3].innerHTML==wrongImage && box[6].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[1].innerHTML==wrongImage && box[4].innerHTML==wrongImage && box[7].innerHTML==wrongImage){
+                alert('Wrong Player Wins'); 
+            }
+            else if(box[2].innerHTML==wrongImage && box[5].innerHTML==wrongImage && box[8].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[0].innerHTML==wrongImage && box[4].innerHTML==wrongImage && box[8].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+            else if(box[2].innerHTML==wrongImage && box[4].innerHTML==wrongImage && box[6].innerHTML==wrongImage){
+                alert('Wrong Player Wins');
+            }
+        }
+    </script>
+</body>
+</html>
